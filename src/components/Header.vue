@@ -20,7 +20,6 @@
         line-height:.86rem;
         background:$bgcolor;
         color:#fff;
-
         .header-left{
             width:.64rem;
             float: left;
@@ -38,6 +37,7 @@
             font-size: .24rem;
         }
         .header-input{
+            box-sizing:border-box;
             padding-left: .2rem;
             height :.64rem;
             line-height:.64rem;
