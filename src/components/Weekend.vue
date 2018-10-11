@@ -1,15 +1,18 @@
 <template>
     <div>
         <div class="recommend-title">
-            热销推荐
+            周末去哪儿
         </div>
         <ul>
-            <li class="item" v-for="(item,index) of recommendList" :key="index">
-                <img :src="item.imgUrl" alt="" class="item-img">
+            <li class="item"
+                v-for="(item,index) of recommendList"
+                :key="index">
+                <div class="item-img-wrapper">
+                    <img :src="item.imgUrl" alt="" class="item-img">
+                </div>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
-                    <button class="item-button">查看详情</button>
                 </div>
             </li>
         </ul>
@@ -18,31 +21,31 @@
 
 <script>
     export default {
-        name: "HomeRecommend",
+        name: "HomeWeekend",
         data(){
             return {
                 recommendList:[
                     {
                     id:'001',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
+                    imgUrl:'http://img1.qunarzz.com/sight/source/1509/a1/4faeed396a85aa.jpg_r_640x214_75530e9b.jpg',
                     title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
                     desc:'浪漫大连首站，浪漫海洋主题乐园',
                     },
                     {
                         id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
+                        imgUrl:'http://img1.qunarzz.com/sight/source/1509/a1/4faeed396a85aa.jpg_r_640x214_75530e9b.jpg',
                         title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
                         desc:'浪漫大连首站，浪漫海洋主题乐园',
                     },
                     {
                         id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
+                        imgUrl:'http://img1.qunarzz.com/sight/source/1509/a1/4faeed396a85aa.jpg_r_640x214_75530e9b.jpg',
                         title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
                         desc:'浪漫大连首站，浪漫海洋主题乐园',
                     },
                     {
                         id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
+                        imgUrl:'http://img1.qunarzz.com/sight/source/1509/a1/4faeed396a85aa.jpg_r_640x214_75530e9b.jpg',
                         title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
                         desc:'浪漫大连首站，浪漫海洋主题乐园',
                     },
@@ -61,37 +64,25 @@
         background: #eee;
         text-indent: .3rem;
     }
-    .item{
-        overflow: hidden;
-        display: flex;
-        height: 1.9rem;
+    .item-img-wrapper{
+        overflow:hidden;
+        height:0;
+        padding-bottom:33.9%;
         .item-img{
-            width:1.7rem;
-            height:1.7rem;
-            padding .1rem;
+            width:100%;
         }
-        .item-info{
-            flex:1;
-            padding:.1rem;
-            min-width:0;
-            .item-title{
-                line-height :.54rem;
-                font-size:.32rem;
-                ellipsis();
-            }
-            .item-desc{
-                line-height:.4rem;
-                color :#ccc;
-                ellipsis();
-            }
-            .item-button{
-                line-height .44rem;
-                margin-top .16rem;
-                background :#ff9300;
-                padding :0 .1rem;
-                border-radius .06rem;
-                color:#fff;
-            }
+    }
+    .item-info{
+        padding:.1rem;
+        .item-title{
+            line-height :.54rem;
+            font-size:.32rem;
+            ellipsis();
+        }
+        .item-desc{
+            line-height:.4rem;
+            color :#ccc;
+            ellipsis();
         }
     }
 
