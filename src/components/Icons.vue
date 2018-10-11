@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper  :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="(icon,index) in page" :key="index">
                     <div class="icon-img">
@@ -48,6 +48,16 @@
                         text:'热门景点',
                     },
                     ],
+                swiperOption : {
+                    pagination: {
+                        el: '.swiper-pagination'
+                    },
+                    loop:true,
+                    autoplay:false
+                    // some swiper options/callbacks
+                    // 所有的参数同 swiper 官方 api 参数
+                    // ...
+                }
             }
         },
         computed: {

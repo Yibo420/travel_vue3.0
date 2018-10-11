@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption" ref="mySwiper">
+        <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
             <!-- slides -->
-            <swiper-slide v-for="(banner,index) in banners" :key="index">
+            <swiper-slide v-for="(banner,index) in swiperList" :key="index">
                 <img :src="banner" class="swiper-img">
             </swiper-slide>
             <!-- Optional controls -->
@@ -14,6 +14,9 @@
 <script>
     export default {
         name: "HomeSwiper",
+        props:{
+            swiperList:Array
+        },
         data() {
             return {
                 swiperOption : {
@@ -25,11 +28,6 @@
                     // 所有的参数同 swiper 官方 api 参数
                     // ...
                 },
-                banners : [
-                    'http://img1.qunarzz.com/des-mis/ad/1704/85/e817a31674a37f.jpg',
-                    'http://dimg04.c-ctrip.com/images/700h0i0000009nvq206D5_750_330_217.jpg?v=201809181141',
-                    'http://img1.qunarzz.com/piao/fusion/1809/31/da037478f37cf202.jpg_750x200_a02cf862.jpg',
-                ]
             }
         },
         methods:{
@@ -38,6 +36,9 @@
             },
         },
         computed: {
+            showSwiper(){
+                return this.swiperList.length
+            },
             swiper() {
                 return this.$refs.mySwiper.swiper
             }

@@ -19,35 +19,11 @@
 <script>
     export default {
         name: "HomeRecommend",
+        props:{
+            recommendList:Array,
+        },
         data(){
             return {
-                recommendList:[
-                    {
-                    id:'001',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
-                    title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
-                    desc:'浪漫大连首站，浪漫海洋主题乐园',
-                    },
-                    {
-                        id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
-                        title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
-                        desc:'浪漫大连首站，浪漫海洋主题乐园',
-                    },
-                    {
-                        id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
-                        title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
-                        desc:'浪漫大连首站，浪漫海洋主题乐园',
-                    },
-                    {
-                        id:'001',
-                        imgUrl:'http://img1.qunarzz.com/sight/p0/1809/6b/6b900de5e5ac7239a3.img.jpg_200x200_98bbdd13.jpg',
-                        title:'大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界大连省海洋世界',
-                        desc:'浪漫大连首站，浪漫海洋主题乐园',
-                    },
-
-                ]
             }
         },
     }
