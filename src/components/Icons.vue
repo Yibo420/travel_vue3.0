@@ -47,7 +47,7 @@
                         imgurl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
                         text:'热门景点',
                     },
-                    ]
+                    ],
             }
         },
         computed: {
@@ -67,7 +67,8 @@
 </script>
 
 <style scoped lang="stylus">
-    @import '~@/assets/variables.styl'
+    @import '~@/assets/variables.styl';
+    @import '~@/assets/mixin.styl';
     .icons{
         overflow: hidden;
         height:0;
@@ -103,9 +104,7 @@
             line-height: .44rem
             color: $darkTextColor;
             text-align:center;
-            overflow:hidden;
-            white-space:nowrap;
-            text-overflow: ellipsis;
+            ellipsis();
         }
 
     }

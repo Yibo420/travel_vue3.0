@@ -4,10 +4,7 @@ import router from './router'
 import store from './store'
 import './assets/css/reset.css'
 import fastClick from 'fastclick'
-/*
-import './assets/js/basic'
-*/
-import 'lib-flexible'
+import 'amfe-flexible'
 import './assets/css/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 

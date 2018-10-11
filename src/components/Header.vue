@@ -16,20 +16,21 @@
     @import '~@/assets/variables.styl';
     .header{
         display : flex;
-        height:.86rem;
-        line-height:.86rem;
+        height:1.2rem;
+        line-height:1.2rem;
         background:$bgcolor;
         color:#fff;
+        font-size:.24rem;
         .header-left{
-            width:.64rem;
+            width:.86rem;
             float: left;
             text-align:center;
         }
         .back-icon{
-            font-size:.4rem;
+            font-size:.24rem;
         }
         .header-right{
-            width:1.24rem;
+            width:1.8rem;
             float: right;
             text-align:center;
         }
@@ -39,10 +40,10 @@
         .header-input{
             box-sizing:border-box;
             padding-left: .2rem;
-            height :.64rem;
-            line-height:.64rem;
+            height :.8rem;
+            line-height:.8rem;
             margin-left:.2rem;
-            margin-top: .12rem;
+            margin-top: .2rem;
             flex :1;
             border-radius : .1rem;
             background:#fff;
