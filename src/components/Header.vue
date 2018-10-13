@@ -2,7 +2,9 @@
     <div class="header">
         <div class="header-left"><span class="iconfont  back-icon">&#xe7a4;</span></div>
         <div class="header-input"><span class="iconfont">&#xe61f;</span>输入城市/景点/游玩/主体</div>
-        <div class="header-right ">{{this.city}}<span class="iconfont arrow-icon">&#xe614;</span></div>
+        <router-link to="/city">
+            <div class="header-right ">{{this.city}}<span class="iconfont arrow-icon">&#xe614;</span></div>
+        </router-link>
     </div>
 </template>
 
@@ -20,8 +22,8 @@
     @import '~@/assets/variables.styl';
     .header{
         display : flex;
-        height:1.2rem;
-        line-height:1.2rem;
+        height:$headerHeight;
+        line-height:$headerHeight;
         background:$bgcolor;
         color:#fff;
         font-size:.24rem;
@@ -37,6 +39,7 @@
             width:1.8rem;
             float: right;
             text-align:center;
+            color:#fff;
         }
         .arrow-icon{
             font-size: .24rem;
@@ -44,10 +47,10 @@
         .header-input{
             box-sizing:border-box;
             padding-left: .2rem;
-            height :.8rem;
-            line-height:.8rem;
-            margin-left:.2rem;
-            margin-top: .2rem;
+            height :.66rem;
+            line-height:.66rem;
+            margin-left:.1rem;
+            margin-top: .1rem;
             flex :1;
             border-radius : .1rem;
             background:#fff;
