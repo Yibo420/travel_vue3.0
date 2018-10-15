@@ -21,7 +21,9 @@
         },
         data(){
             return{
-                touchStatus:false
+                touchStatus:false,
+                startY:0,
+                timer:null
             }
         },
         computed:{
@@ -33,6 +35,10 @@
                 return letters
             }
         },
+        updated(){
+            this.startY = this.$refs['A'][0].offsetTop
+
+        },
         methods:{
             handleLetterClick(e){
                 // console.log(e)
@@ -43,13 +49,17 @@
             },
             handleTouchMove(e){
                 if(this.touchStatus){
-                    const startY = this.$refs['A'][0].offsetTop
-                    const touchY = e.touches[0].clientY - 69
-                    const index = Math.floor((touchY-startY)/20)
-                    console.log(startY,touchY,index)
-                    if(index>=0 && index <this.letters.length){
-                        this.$emit('change',this.letters[index])
+                    if(this.timer){
+                        clearTimeout(this.timer)
                     }
+                    this.timer = setTimeout(()=>{
+                        const touchY = e.touches[0].clientY - 69
+                        const index = Math.floor((touchY-this.startY)/20)
+                        console.log(this.startY,touchY,index)
+                        if(index>=0 && index <this.letters.length){
+                            this.$emit('change',this.letters[index])
+                        }
+                    },16)
                 }
             },
             handleTouchEnd(){
