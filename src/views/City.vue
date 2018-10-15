@@ -2,8 +2,8 @@
     <div>
         <city-header></city-header>
         <city-search></city-search>
-        <city-list></city-list>
-        <alphabet></alphabet>
+        <city-list :cities="cities" :hotCities="hotCities"></city-list>
+        <alphabet :cities="cities"></alphabet>
     </div>
 </template>
 
@@ -14,12 +14,39 @@
     import Alphabet from '../components/Alphabet'
     export default {
         name: "City",
+        data(){
+            return{
+                cities:{},
+                hotCities:[]
+            }
+        },
         components:{
             CityHeader,
             CitySearch,
             CityList,
             Alphabet
-        }
+        },
+
+        methods:{
+            getCityInfo(){
+                this.$http.get('/cityjson')
+                    .then(this.getCityInfoSuccess)
+            },
+            getCityInfoSuccess(res){
+                console.log(res)
+                res=res.data
+                if(res.ret&&res.data){
+                    const data = res.data
+                    console.log(data)
+                    this.cities=data.cities
+                    this.hotCities=data.hotCities
+                }
+            },
+
+        },
+        mounted(){
+            this.getCityInfo()
+        },
     }
 </script>
 

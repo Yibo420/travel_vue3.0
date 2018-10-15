@@ -1,4 +1,6 @@
 const mockdata = require('./mock/index.json');
+const cityjson = require('./mock/city.json');
+const detailjson = require('./mock/detail.json');
 
 module.exports={
     devServer: {
@@ -6,6 +8,12 @@ module.exports={
         before(app){
             app.get('/indexjson',(req,res,next)=>{
                 res.json(mockdata);
+            })
+            app.get('/cityjson',(req,res,next)=>{
+                res.json(cityjson);
+            })
+            app.get('/detailjson',(req,res,next)=>{
+                res.json(detailjson);
             })
         },
         proxy:{
