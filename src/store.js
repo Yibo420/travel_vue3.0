@@ -30,7 +30,7 @@ export default new Vuex.Store({
   },
     getters:{//作用与computed类似,用于计算某些属性
     doubleCity(state){
-      return state.city + " " + state.city
+      return state.city
     }
     }
 })
