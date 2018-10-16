@@ -17,6 +17,7 @@
                 <li
                         v-for="item of list"
                         :key="item.id"
+                        @click="handleCityClick(item.name)"
                         class="search-item border-bottom"
                 >
                     {{item.name}}
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex'
     import BetterScroll from 'better-scroll'
     export default {
         name: "CitySearch",
@@ -42,6 +44,17 @@
                 list:[],
                 timer:null
             }
+        },
+        methods:{
+            handleCityClick(city){
+                // alert(city)
+                // this.$store.dispatch('changeCity',city)//调用vuex中actions的方法
+                this.changeCity(city)//调用vuex中mutations的方法
+                this.$router.push('/')
+            },
+            ...mapMutations({
+                changeCity:'changeCity'//将this.$store.commit('changeCity')这个方法映射到当前组件的changeCity方法上
+            })
         },
         mounted(){
             this.scroll = new BetterScroll(this.$refs.search)

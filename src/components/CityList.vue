@@ -7,7 +7,7 @@
                 </div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button">{{this.currentCity}}</div>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,9 @@
                 <div class="button-list">
                     <div class="button-wrapper"
                          v-for="item of hotCities"
-                         :key="item.id">
+                         :key="item.id"
+                         @click="handleCityClick(item.name)"
+                    >
                         <div class="button">{{item.name}}</div>
                     </div>
                 </div>
@@ -34,6 +36,7 @@
             <div class="item-list"
                  v-for="innerItem of item"
                  :key="innerItem.id"
+                 @click="handleCityClick(innerItem.name)"
             >
                 <div class="item border-bottom">{{innerItem.name}}</div>
             </div>
@@ -43,6 +46,7 @@
 </template>
 
 <script>
+    import { mapState,mapMutations } from 'vuex'
     import BetterScroll from 'better-scroll'
     export default {
         name: "CityList",
@@ -51,9 +55,16 @@
             hotCities:Array,
             letter:String
         },
-        mounted(){
-           /* console.log(this.cities)*/
-            this.scroll = new BetterScroll(this.$refs.wrapper)
+        methods:{
+            handleCityClick(city){
+                // alert(city)
+                // this.$store.dispatch('changeCity',city)//调用vuex中actions的方法
+                this.changeCity(city)//调用vuex中mutations的方法
+                this.$router.push('/')
+            },
+            ...mapMutations({
+                changeCity:'changeCity'
+            })
         },
         watch:{
             'letter'(){
@@ -65,6 +76,15 @@
                 }
             }
         },
+        mounted(){
+            /* console.log(this.cities)*/
+            this.scroll = new BetterScroll(this.$refs.wrapper)
+        },
+        computed:{
+            ...mapState({
+                currentCity:'city'
+            })
+        }
     }
 </script>
 
