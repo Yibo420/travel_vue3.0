@@ -16,6 +16,7 @@
 <style scoped lang="stylus">
     @import "~@/assets/variables.styl";
     .header{
+
         position:relative;
         height: $headerHeight;
         overflow: hidden;

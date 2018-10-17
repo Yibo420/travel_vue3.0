@@ -53,6 +53,35 @@ export default {
         getHomeInfo(){
             this.$http.get('/indexjson?city=' + this.city)
                 .then(this.getHomeInfoSuccess)
+            // let params={
+            //     orderType: 'asdf',
+            //     contact:'jieyi',
+            //     phoneNum: '13500000000',
+            //     repurchase:false
+            // }
+            // this.$http.post('http://47.93.229.90/add',params).then(response=>{
+            //     console.log(response)
+            // })
+            // let params1={
+            //     phonenum:13500000000
+            // }
+            // this.$http.post('http://47.93.229.90/getOrderTableByPhone',params1).then(response=>{
+            //     console.log(response)
+            // })
+            //
+            // let params2={
+            //     orderId:"00036aa0-d1e5-11e8-a912-6f18158466b8"
+            // }
+            // this.$http.post('http://47.93.229.90/getOrderListByOrderId',params2).then(response=>{
+            //     console.log(response)
+            // })
+            // this.$http.get('http://47.93.229.90/getOrderTable').then(response=>{
+            //     console.log(response)
+            // })
+            // this.$http.get('http://47.93.229.90/getOrderList').then(response=>{
+            //     console.log(response)
+            // })
+            //
         },
         getHomeInfoSuccess(res){
             console.log(res)
