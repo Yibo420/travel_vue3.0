@@ -20,7 +20,7 @@
         props:{
             imgs:{
                 type:Array,
-                detault(){
+                default(){
                     return [
                         'http://img1.qunarzz.com/sight/p0/1501/ab/ab02fceb3fa0a60e.water.jpg_r_800x800_351dd5e6.jpg',
                         'http://img1.qunarzz.com/sight/p0/1501/ab/ab02fceb3fa0a60e.water.jpg_r_800x800_351dd5e6.jpg',
